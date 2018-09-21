@@ -1,7 +1,6 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using NetTopologySuite.Utilities;
 using NodaTime;
 using NpgsqlTypes;
 using Xunit;
@@ -24,7 +23,7 @@ namespace EfCoreNpgsqlTest
         public void Test1()
         {
             var options = new DbContextOptionsBuilder<TestContext>()
-                .UseNpgsql(_connectionString, ob => ob.UseNodaTime().UseNetTopologySuite())
+                .UseNpgsql(_connectionString, ob => ob.UseNodaTime())
                 .Options;
             using (var context = new TestContext(options))
             {

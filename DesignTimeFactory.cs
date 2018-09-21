@@ -22,7 +22,7 @@ namespace EfCoreNpgsqlTest
         {
             
             var optionsBuilder = new DbContextOptionsBuilder<TestContext>();
-            optionsBuilder.UseNpgsql(_connectionString, ob => ob.UseNodaTime().UseNetTopologySuite());
+            optionsBuilder.UseNpgsql(_connectionString, ob => ob.UseNodaTime());
             return new TestContext(optionsBuilder.Options);
         }
         

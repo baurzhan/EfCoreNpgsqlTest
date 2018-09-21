@@ -13,7 +13,6 @@ namespace EfCoreNpgsqlTest
        
         static TestContext()
         {
-            NpgsqlConnection.GlobalTypeMapper.UseJsonNet();
         }
 
         public TestContext()
