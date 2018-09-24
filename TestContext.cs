@@ -24,17 +24,9 @@ namespace EfCoreNpgsqlTest
         {
         }
 
-        public virtual DbSet<DateTimeEntity> DateTimeEntities { get; set; }
         public virtual DbSet<InstantEntity> InstantEntities { get; set; }
         private void CreateAppModels(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DateTimeEntity>(entity =>
-            {
-                entity.ToTable("date_time_entities", "public");
-                entity.HasKey(e => new {e.Id}).HasName("date_time_entity_pk");
-                entity.Property(e => e.Id).HasColumnName("id");
-                entity.Property(e => e.Valid).HasColumnType("valid");
-            });
             modelBuilder.Entity<InstantEntity>(entity =>
             {
                 entity.ToTable("instant_entities", "public");

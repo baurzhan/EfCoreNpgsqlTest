@@ -21,18 +21,6 @@ namespace EfCoreNpgsqlTest.Migrations
                 .HasAnnotation("ProductVersion", "2.1.2-rtm-30932")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("EfCoreNpgsqlTest.DateTimeEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<NpgsqlRange<DateTime>>("Valid");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DateTimeEntities");
-                });
-
             modelBuilder.Entity("EfCoreNpgsqlTest.InstantEntity", b =>
                 {
                     b.Property<int>("Id")

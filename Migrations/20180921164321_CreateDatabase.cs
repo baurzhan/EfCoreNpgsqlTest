@@ -10,18 +10,6 @@ namespace EfCoreNpgsqlTest.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "DateTimeEntities",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    Valid = table.Column<NpgsqlRange<DateTime>>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DateTimeEntities", x => x.Id);
-                });
 
             migrationBuilder.CreateTable(
                 name: "InstantEntities",
@@ -39,9 +27,6 @@ namespace EfCoreNpgsqlTest.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "DateTimeEntities");
-
             migrationBuilder.DropTable(
                 name: "InstantEntities");
         }
