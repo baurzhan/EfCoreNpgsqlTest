@@ -20,8 +20,8 @@ namespace EfCoreNpgsqlTest
                 .AddJsonFile($"appsettings.json")
                 .Build();
             _connectionString = configuration.GetConnectionString("default");
-            NpgsqlLogManager.Provider = new NpgsqlLogginProvider(outputHelper);
-            NpgsqlLogManager.IsParameterLoggingEnabled = true;
+            //NpgsqlLogManager.Provider = new NpgsqlLogginProvider(outputHelper);
+            //NpgsqlLogManager.IsParameterLoggingEnabled = true;
         }
 
         [Fact]
